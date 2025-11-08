@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,47 +9,69 @@ const ContactForm = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     phone: "",
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (isSubmitting) {
+      return;
+    }
+    setIsSubmitting(true);
+
+    const name = formData.name.trim();
+    const phone = formData.phone.trim();
+    const subjectInput = formData.subject.trim();
+    const message = formData.message.trim();
+
+    if (!name || !message) {
       toast({
-        title: "Erreur",
-        description: "Veuillez remplir tous les champs obligatoires.",
+        title: "Champs requis",
+        description: "Veuillez renseigner votre nom et votre message.",
         variant: "destructive",
       });
+      setIsSubmitting(false);
       return;
     }
 
-    // Here you would normally send the form data to your backend
+    const sanitizedPhone = phone.replace(/\s+/g, " ");
+    const hasInvalidPhone = sanitizedPhone && !/^\+?\d[\d\s]{6,}$/.test(sanitizedPhone);
+
+    if (hasInvalidPhone) {
+      toast({
+        title: "Numéro invalide",
+        description: "Veuillez entrer un numéro de téléphone valide.",
+        variant: "destructive",
+      });
+      setIsSubmitting(false);
+      return;
+    }
+
+    const subject = encodeURIComponent(subjectInput || "Nouveau message depuis le site");
+    const body = encodeURIComponent(
+      `Nom : ${name}\n` +
+        `Téléphone : ${sanitizedPhone || "Non renseigné"}\n\n` +
+        `Message : ${message}`
+    );
+
     toast({
-      title: "Message envoyé !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
+      title: "Message prêt",
+      description: "Votre application de messagerie va s'ouvrir pour l'envoi.",
     });
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
+    const mailtoUrl = `mailto:leaders.consultingtg@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = mailtoUrl;
+    setIsSubmitting(false);
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [event.target.name]: event.target.value,
     });
   };
 
@@ -67,18 +89,7 @@ const ContactForm = () => {
         />
       </div>
 
-      <div>
-        <Label htmlFor="email">Email *</Label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="votre.email@exemple.com"
-          required
-        />
-      </div>
+    
 
       <div>
         <Label htmlFor="phone">Téléphone</Label>
@@ -116,8 +127,8 @@ const ContactForm = () => {
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full">
-        Envoyer le message
+      <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+        {isSubmitting ? "Envoi..." : "Envoyer le message"}
       </Button>
     </form>
   );
