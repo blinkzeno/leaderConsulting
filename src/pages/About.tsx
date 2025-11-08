@@ -28,14 +28,22 @@ const About = () => {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-accent/30 to-background">
-          <div className="container mx-auto px-4">
+        <section className="relative py-24 md:py-32">
+          <div className="absolute inset-0">
+            <img
+              src={aboutImage}
+              alt="Professionnels en réunion chez Leaders Consulting"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-center mb-6 text-foreground">
               Qui sommes-nous ?
             </h1>
             <p className="text-xl text-center text-muted-foreground max-w-3xl mx-auto">
-              Votre partenaire de confiance pour l'audit, l'expertise comptable et
-              la gestion d'entreprise au Togo.
+              Votre partenaire de confiance pour l'audit, l'expertise comptable,
+              la gestion d'entreprise et des ressources humaines.
             </p>
           </div>
         </section>
@@ -56,7 +64,7 @@ const About = () => {
                   Notre histoire
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Depuis sa création, LEADERS CONSULTING CORPORATION SARL accompagne les entreprises
+                  Depuis sa création, LEADERS CONSULTING © accompagne les entreprises
                   togolaises et africaines dans leur développement. Notre mission :
                   fournir des solutions fiables et innovantes en matière d'audit,
                   d'expertise comptable, de gestion et de ressources humaines.

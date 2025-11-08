@@ -2,7 +2,7 @@ import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
-
+import contactImage from "@/assets/contact.jpeg"
 const Contact = () => {
   const handleWhatsApp = () => {
     const phoneNumber = "22890115351";
@@ -18,8 +18,16 @@ const Contact = () => {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-accent/30 to-background">
-          <div className="container mx-auto px-4">
+        <section className="py-20  relative">
+            <div className="absolute inset-0">
+            <img
+              src={contactImage}
+              alt="Professionnels en réunion chez Leaders Consulting"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60"></div>
+          </div>
+          <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-center mb-6 text-foreground">
               Contactez-nous
             </h1>
@@ -59,7 +67,7 @@ const Contact = () => {
                         <h3 className="font-subheading font-semibold mb-1 text-foreground">
                           Adresse
                         </h3>
-                        <p className="text-muted-foreground">Lomé, Togo</p>
+                        <p className="text-muted-foreground">Agoé Zossimé, Rte d'Amedinta en face de leglise des AD</p>
                       </div>
                     </div>
 

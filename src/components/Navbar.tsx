@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: "Accueil", path: "/" },
     { name: "À propos", path: "/about" },
     { name: "Services", path: "/services" },
+    { name: "Formations", path: "/formations" },
     { name: "Témoignages", path: "/testimonials" },
     { name: "Contact", path: "/contact" },
   ];
@@ -26,7 +27,7 @@ const Navbar = () => {
             <div className="text-2xl font-heading font-bold text-primary">
               LEADERS
             </div>
-            <div className="text-sm font-subheading text-secondary">
+            <div className="text-2xl font-subheading text-secondary">
               Consulting
             </div>
           </Link>

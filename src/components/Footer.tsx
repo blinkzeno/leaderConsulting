@@ -9,11 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-heading font-bold mb-4">
-              LEADERS CONSULTING CORPORATION SARL
+              LEADERS Consulting ©
             </h3>
             <p className="text-sm opacity-90 mb-4">
               Cabinet d'audit, d'expertise comptable, de gestion d'entreprise et
-              de ressources humaines, intérim et Formation Professionnel .
+              de ressources humaines, intérim et Formations Professionnelles .
             </p>
             <p className="text-sm opacity-90">
               Votre partenaire de confiance pour piloter la croissance et la
@@ -44,6 +44,12 @@ const Footer = () => {
                 className="text-sm opacity-90 hover:opacity-100 transition-opacity"
               >
                 Services
+              </Link>
+              <Link
+                to="/formations"
+                className="text-sm opacity-90 hover:opacity-100 transition-opacity"
+              >
+                Formations
               </Link>
               <Link
                 to="/testimonials"
@@ -94,7 +100,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
           <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} LEADERS CONSULTING CORPORATION SARL. Tous droits
+            © {new Date().getFullYear()} LEADERS CONSULTING ©. Tous droits
             réservés.
           </p>
         </div>
