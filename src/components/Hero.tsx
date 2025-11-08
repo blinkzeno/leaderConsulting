@@ -27,11 +27,12 @@ const Hero = () => {
           <h1 className="text-4xl md:text-6xl font-heading font-bold mb-6 animate-fade-in-up">
             <span className="text-primary">LEADERS</span>{" "}
             <span className="text-secondary">CONSULTING</span>
+            <span className="font-normal text-base"> CORPORATION SARL</span>
           </h1>
           
           <p className="text-xl md:text-2xl font-subheading text-foreground mb-4 animate-fade-in-up">
-            Cabinet d'audit, d'expertise comptable, de gestion d'entreprise et de
-            ressources humaines au Togo.
+             Cabinet d'audit, d'expertise comptable, de gestion d'entreprise et
+              de ressources humaines, intérim et Formations Professionnels
           </p>
           
           <p className="text-lg text-muted-foreground mb-8 animate-fade-in-up">

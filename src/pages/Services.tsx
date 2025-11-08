@@ -78,7 +78,7 @@ const Services = () => {
               Contactez-nous dès aujourd'hui pour discuter de vos besoins et
               découvrir comment nous pouvons vous aider à atteindre vos objectifs.
             </p>
-            <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary-foreground hover:bg-secondary-foreground hover:text-secondary">
+            <Button asChild size="lg" variant="outline" className="border-secondary-foreground text-secondary border-opacity-70 hover:bg-secondary-foreground hover:text-secondary">
               <Link to="/contact">Demander une consultation</Link>
             </Button>
           </div>

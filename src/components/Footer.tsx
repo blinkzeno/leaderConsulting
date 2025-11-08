@@ -9,11 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-heading font-bold mb-4">
-              LEADERS CONSULTING
+              LEADERS CONSULTING CORPORATION SARL
             </h3>
             <p className="text-sm opacity-90 mb-4">
               Cabinet d'audit, d'expertise comptable, de gestion d'entreprise et
-              de ressources humaines au Togo.
+              de ressources humaines, intérim et Formation Professionnel .
             </p>
             <p className="text-sm opacity-90">
               Votre partenaire de confiance pour piloter la croissance et la
@@ -68,7 +68,9 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span className="text-sm opacity-90">Lomé, Togo</span>
+                <span className="text-sm opacity-90">Agoé Zossimé, Rte d'Amedinta
+                  en face de leglise des AD
+                </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={18} className="flex-shrink-0" />
@@ -80,10 +82,10 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail size={18} className="flex-shrink-0" />
                 <a
-                  href="mailto:leaders.consultingco@gmail.com"
+                  href="mailto:leaders.consultingtg@gmail.com"
                   className="text-sm opacity-90 hover:opacity-100 transition-opacity"
                 >
-                  leaders.consultingco@gmail.com
+                  leaders.consultingtg@gmail.com
                 </a>
               </div>
             </div>
@@ -92,7 +94,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-8 border-t border-primary-foreground/20 text-center">
           <p className="text-sm opacity-75">
-            © {new Date().getFullYear()} Leaders Consulting. Tous droits
+            © {new Date().getFullYear()} LEADERS CONSULTING CORPORATION SARL. Tous droits
             réservés.
           </p>
         </div>

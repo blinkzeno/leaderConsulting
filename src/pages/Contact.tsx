@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 
 const Contact = () => {
   const handleWhatsApp = () => {
-    const phoneNumber = "22899758999";
+    const phoneNumber = "22890115351";
     const message = encodeURIComponent(
       "Bonjour, je souhaite en savoir plus sur vos services."
     );
@@ -89,10 +89,10 @@ const Contact = () => {
                           Email
                         </h3>
                         <a
-                          href="mailto:leaders.consultingco@gmail.com"
+                          href="mailto:leaders.consultingtg@gmail.com"
                           className="text-muted-foreground hover:text-primary transition-colors"
                         >
-                          leaders.consultingco@gmail.com
+                          leaders.consultingtg@gmail.com
                         </a>
                       </div>
                     </div>

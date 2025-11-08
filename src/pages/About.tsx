@@ -56,7 +56,7 @@ const About = () => {
                   Notre histoire
                 </h2>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Depuis sa création, LEADERS CONSULTING accompagne les entreprises
+                  Depuis sa création, LEADERS CONSULTING CORPORATION SARL accompagne les entreprises
                   togolaises et africaines dans leur développement. Notre mission :
                   fournir des solutions fiables et innovantes en matière d'audit,
                   d'expertise comptable, de gestion et de ressources humaines.
