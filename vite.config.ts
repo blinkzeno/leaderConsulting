@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/leaderConsulting",
+  base: "/",
   server: {
     host: "::",
     allowedHosts: ["hydrazo-clinton-stereophonically.ngrok-free.dev"],

@@ -63,7 +63,7 @@ const ContactForm = () => {
       description: "Votre application de messagerie va s'ouvrir pour l'envoi.",
     });
 
-    const mailtoUrl = `mailto:leaders.consultingtg@gmail.com?subject=${subject}&body=${body}`;
+    const mailtoUrl = `mailto:?to=${encodeURIComponent("leaders.consultingtg@gmail.com")}&subject=${subject}&body=${body}`;
     window.location.href = mailtoUrl;
     setIsSubmitting(false);
   };
